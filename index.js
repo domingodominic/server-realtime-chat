@@ -30,6 +30,12 @@ io.on("connection", (socket) => {
   });
 });
 
+// Define a route for the root path ("/") to handle HTTP GET requests.
+app.get("/", (req, res) => {
+  res.send("Server is running."); // Respond with a simple message.
+});
+
+// Start the server and listen on port 3002.
 server.listen(3002, () => {
-  console.log("Running");
+  console.log("Server is running on port 3002");
 });
