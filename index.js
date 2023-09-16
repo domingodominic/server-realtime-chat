@@ -7,6 +7,9 @@ app.use(cors());
 
 const server = http.createServer(app);
 
+// Use process.env.PORT or default to port 3008
+const port = process.env.PORT || 3008;
+
 const io = new Server(server, {
   cors: {
     origin: "https://domingodominic.github.io/simple-chat-app/",
@@ -29,11 +32,8 @@ io.on("connection", (socket) => {
     console.log("User disconnected", socket.id);
   });
 });
-// Define a route for the root path ("/") to handle HTTP GET requests.
-app.get("/", (req, res) => {
-  res.send("Server is running."); // Respond with a simple message.
-});
 
-server.listen(3008, () => {
-  console.log("Running");
+// Use the dynamically assigned port
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
