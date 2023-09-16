@@ -8,7 +8,7 @@ app.use(cors());
 const server = http.createServer(app);
 
 // Use process.env.PORT or default to port 3008
-const port = process.env.PORT || 3008;
+const port = process.env.PORT || 3001;
 
 const io = new Server(server, {
   cors: {
@@ -33,7 +33,6 @@ io.on("connection", (socket) => {
   });
 });
 
-// Use the dynamically assigned port
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
