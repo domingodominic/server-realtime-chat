@@ -34,6 +34,6 @@ app.get("/", (req, res) => {
   res.send("Server is running."); // Respond with a simple message.
 });
 
-server.listen(3001, () => {
+server.listen(3008, () => {
   console.log("Running");
 });
